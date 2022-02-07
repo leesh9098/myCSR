@@ -16,6 +16,7 @@ export default function TestResult(props) {
                 <meta property="og:title" content={ResultData[param]["ogTitle"]} />
                 <meta property="og:description" content={ResultData[param]["ogDescription"]} />
                 <meta property="og:image" content={ResultData[param]["ogImage"]} />
+                <meta property="twitter:cart" content="summary" />
                 <meta name="twitter:title" content={ResultData[param]["ogTitle"]} />
                 <meta name="twitter:description" content={ResultData[param]["ogDescription"]} />
                 <meta name="twitter:image" content={ResultData[param]["ogImage"]} />
