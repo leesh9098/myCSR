@@ -1,4 +1,4 @@
-import ResultThumbnail from "../images/ResultThumbnail.png";
+import ResultThumbnail from "../images/결과썸네일.png";
 
 const ResultData = {
     type1: {
