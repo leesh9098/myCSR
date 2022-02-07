@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import KakaoTalkIcon from "../../카카오톡.png";
+import KakaoTalkIcon from "../../images/카카오톡.png";
 import { useScript } from "../../useScript";
 import { FacebookIcon, FacebookShareButton, TwitterIcon, TwitterShareButton } from "react-share";
 
