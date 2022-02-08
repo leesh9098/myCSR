@@ -5,21 +5,25 @@ import { quiz } from "../data/Quiz";
 export default function Quiz() {
     const [stageNumber, setStageNumber] = useState(1);
     const [score, setScore] = useState(0);
+    const [leftQuiz, setLeftQuiz] = useState(quiz.length - 1);
     let navigate = useNavigate();
 
     const handleAnswer = (getScore) => {
         setScore(score + getScore);
+        setLeftQuiz(leftQuiz - 1);
         setStageNumber(stageNumber + 1);
     }
 
     const inputAnswerCheck = () => {
         if (document.getElementById("quiz5").value === quiz[4].answers[0].text) {
-            setScore(score + quiz[4].answers[0].score)
+            setScore(score + quiz[4].answers[0].score);
+            setLeftQuiz(leftQuiz - 1);
             setStageNumber(stageNumber + 1);
         } else if (document.getElementById("quiz5").value === "") {
             alert("정답을 입력해주세요");
         } else {
-            setScore(score)
+            setScore(score);
+            setLeftQuiz(leftQuiz - 1);
             setStageNumber(stageNumber + 1);
         }
     }
@@ -50,6 +54,7 @@ export default function Quiz() {
                             <p className="">{quiz[4].question}</p>
                             <input id="quiz5" type="text" placeholder="정답 입력" />
                             <button onClick={inputAnswerCheck}>확인</button>
+                            <p>{`${leftQuiz}개 문제 남음`}</p>
                         </>
                      : 
                         <>
@@ -66,6 +71,7 @@ export default function Quiz() {
                                     </button>
                                 ))}
                             </div>
+                            <p>{`${leftQuiz}개 문제 남음`}</p>
                         </>
                  : 
                     <>
