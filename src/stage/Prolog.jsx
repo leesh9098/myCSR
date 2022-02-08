@@ -1,19 +1,18 @@
 import React from "react";
-import CorrectButton from "../container/CorrectButton";
-import IncorrectButton from "../container/IncorrectButton";
+import { Link } from "react-router-dom";
 
 export default class Prolog extends React.Component {
-    state = {
-        stageLocation: 0
-    }
+    // state = {
+    //     stageLocation: 0,
+    //     score: 0
+    // }
 
     render() {
         return (
             <div className="Prolog">
-                <CorrectButton stageLocation={this.state.stageLocation} />
-                <IncorrectButton stageLocation={this.state.stageLocation} />
-                <IncorrectButton stageLocation={this.state.stageLocation} />
-                <IncorrectButton stageLocation={this.state.stageLocation} />
+                <Link to="/quiz">
+                    <button>시작하기</button>
+                </Link>
             </div>
         )
     }

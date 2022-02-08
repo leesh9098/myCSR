@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import ResultSection from "../components/ResultSection";
 import SocialShareButton from "../components/button/SocialShareButton";
 import ResultData from "../data/ResultData";
+import ResetButton from "../components/button/ResetButton";
 
-export default function TestResult(props) {
+export default function TestResult({ setStageNumber, setScore }) {
     const { param } = useParams();
     const currentUrl = window.location.href;
 
@@ -21,10 +22,10 @@ export default function TestResult(props) {
                 <meta name="twitter:description" content={ResultData[param]["ogDescription"]} />
                 <meta name="twitter:image" content={ResultData[param]["ogImage"]} />
             </Helmet>
-            <div className="stage3">
-                {props.TotalScore}
+            <div className="">
                 <ResultSection param={param}></ResultSection>
                 <SocialShareButton />
+                <ResetButton to="/" />
             </div>
         </>
     )
