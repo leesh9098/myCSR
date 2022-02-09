@@ -10,6 +10,11 @@ export default class Prolog extends React.Component {
         ReactGA.initialize('G-XSYRGNC2PX');
         ReactGA.send("pageview");
     }
+
+    start() {
+        window.localStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", "MQ==");
+        window.localStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", "MA==");
+    }
     
     render() {
         return (
@@ -25,7 +30,7 @@ export default class Prolog extends React.Component {
                 </div>
                 <p className="suitRegular numberofuser">현재 10,402명이 참여</p>
                 <Link to="/quiz">
-                    <button className="nextbutton">시작하기</button>
+                    <button className="nextbutton" onClick={this.start}>시작하기</button>
                 </Link>
                 <div className="logoarea">
 

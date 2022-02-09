@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { quiz } from "../data/Quiz";
 
 export default function Quiz() {
-    const [stageNumber, setStageNumber] = useState(1);
-    const [score, setScore] = useState(0);
+    const [stageNumber, setStageNumber] = useState(parseInt(window.atob(window.localStorage.getItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE"))));
+    const [score, setScore] = useState(parseInt(window.atob(window.localStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))));
     const [leftQuiz, setLeftQuiz] = useState(quiz.length - 1);
     const [answerList, setAnswerList] = useState("");
     const [scoreData, setScoreData] = useState(0);
@@ -49,6 +49,11 @@ export default function Quiz() {
         }
     }
 
+    useEffect(() => {
+        window.localStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", window.btoa(stageNumber));
+        window.localStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(score));
+    }, [stageNumber, score])
+
     return (
         <div className="wrap">
             {
@@ -69,6 +74,8 @@ export default function Quiz() {
                 </>
                 : 
                 <>
+                    {stageNumber}<br />
+                    {score}
                     <p className="museumBold quiztitletext">2022 대학생 능력고사</p>
                     <div className="namebox">
                         <div className="museumMedium nametext1">이름</div>
