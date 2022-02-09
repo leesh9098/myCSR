@@ -6,7 +6,7 @@ import SocialShareButton from "../components/button/SocialShareButton";
 import ResultData from "../data/ResultData";
 import ResetButton from "../components/button/ResetButton";
 
-export default function TestResult({ setStageNumber, setScore }) {
+export default function TestResult() {
     const { param } = useParams();
     const currentUrl = window.location.href;
 

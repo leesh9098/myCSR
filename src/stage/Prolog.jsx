@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga4";
 import "../reset.css";
 import "../App.css";
 
 export default class Prolog extends React.Component {
+
+    componentDidMount() {
+        ReactGA.initialize('G-XSYRGNC2PX');
+        ReactGA.send("pageview");
+    }
     
     render() {
         return (
@@ -22,7 +28,7 @@ export default class Prolog extends React.Component {
                     <button className="nextbutton">시작하기</button>
                 </Link>
                 <div className="logoarea">
-                    
+
                 </div>
             </div>
         )
