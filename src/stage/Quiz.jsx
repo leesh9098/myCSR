@@ -5,9 +5,7 @@ import { quiz } from "../data/Quiz";
 export default function Quiz() {
     const [stageNumber, setStageNumber] = useState(parseInt(window.atob(window.localStorage.getItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE"))) || 1);
     const [score, setScore] = useState(parseInt(window.atob(window.localStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))) || 0);
-    // const [stageNumber, setStageNumber] = useState(1);
-    // const [score, setScore] = useState(0);
-    const [leftQuiz, setLeftQuiz] = useState(quiz.length - 1);
+    const [leftQuiz, setLeftQuiz] = useState(parseInt(window.atob(window.localStorage.getItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD"))) || quiz.length - 1);
     const [answerList, setAnswerList] = useState("");
     const [scoreData, setScoreData] = useState(0);
     const [checked, setChecked] = useState(false);
@@ -52,11 +50,10 @@ export default function Quiz() {
     }
 
     useEffect(() => {
-        // setStageNumber(parseInt(window.atob(window.localStorage.getItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE"))));
-        // setScore(parseInt(window.atob(window.localStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))));
         window.localStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", window.btoa(stageNumber));
         window.localStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(score));
-    }, [stageNumber, score])
+        window.localStorage.setItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD", window.btoa(leftQuiz));
+    }, [stageNumber, score, leftQuiz]);
 
     return (
         <div className="wrap">
