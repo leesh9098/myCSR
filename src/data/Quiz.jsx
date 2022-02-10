@@ -4,7 +4,7 @@ export const quiz = [
         question: "매 학기 초 개강을 기념하는 모임은? (3점)",
         answers: [
             { text: "예총", score: 0 },
-            { text: "개총", score: 3 },
+            { text: "개총", score: 10 },
             { text: "신총", score: 0 },
             { text: "총총", score: 0 }
         ]
@@ -23,7 +23,7 @@ export const quiz = [
         answers: [
             { text: "노쇼", score: 0 },
             { text: "한잔", score: 0 },
-            { text: "드랍", score: 5 },
+            { text: "드랍", score: 10 },
             { text: "출튀", score: 0 }
         ]
     },
@@ -34,14 +34,14 @@ export const quiz = [
             { text: "수강", score: 0 },
             { text: "독강", score: 0 },
             { text: "선강", score: 0 },
-            { text: "청강", score: 5 }
+            { text: "청강", score: 10 }
         ]
     },
     {
         id: 5,
         question: "대학교 내 식당을 '학식'이라고 부른다. 그렇다면 기숙사의 식당은 뭐라고 부를까요?(주관식) (5점)",
         answers: [
-            { text: "긱식", score: 5 }
+            { text: "긱식", score: 10 }
         ]
     },
     {
@@ -68,7 +68,7 @@ export const quiz = [
         id: 8,
         question: '"아.. 뭐야 F가 3개나 떴어.. 이번에 ○○각인데..?"\n다음 ○○에 들어갈 말은 무엇일까요? (5점)',
         answers: [
-            { text: "학고", score: 5 },
+            { text: "학고", score: 10 },
             { text: "낮술", score: 0 },
             { text: "잔막", score: 0 },
             { text: "학사", score: 0 },
@@ -79,7 +79,7 @@ export const quiz = [
         question: "'대출'은 대학출석의 줄임말이다 (3점)",
         answers: [
             { text: "O", score: 0 },
-            { text: "X", score: 3 }
+            { text: "X", score: 10 }
         ]
     },
     {

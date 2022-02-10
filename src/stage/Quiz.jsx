@@ -7,8 +7,8 @@ export default function Quiz() {
     const [score, setScore] = useState(parseInt(window.atob(window.localStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))) || 0);
     const [leftQuiz, setLeftQuiz] = useState(parseInt(window.atob(window.localStorage.getItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD"))) || quiz.length - 1);
     const [answerList, setAnswerList] = useState("");
-    const [scoreData, setScoreData] = useState(0);
-    const [checked, setChecked] = useState(false);
+    const [scoreData, setScoreData] = useState(parseInt(window.atob(window.localStorage.getItem("JUVCJTg4JTg0JUVDJUEwJTgxJUVDJUEwJTkwJUVDJTg4JTk4"))) || 0);
+    const [checked, setChecked] = useState(Boolean(window.atob(window.localStorage.getItem("JUVDJUIyJUI0JUVEJTgxJUFDJUVDJTk3JUFDJUVCJUI2JTgw"))) || false);
     let navigate = useNavigate();
 
     const handleAnswerList = (e) => {
@@ -31,13 +31,13 @@ export default function Quiz() {
             }
         } else if (stageNumber > 9) {
             let param;
-            if (score <= 10) {
+            if (score <= 40) {
                 param = "level1";
-            } else if (score <= 20) {
+            } else if (score <= 70) {
                 param = "level2";
-            } else if (score <= 30) {
+            } else if (score <= 90) {
                 param = "level3";
-            } else if (score <= 64) {
+            } else if (score === 100) {
                 param = "level4";
             }
             setScore(score + scoreData);
@@ -53,7 +53,9 @@ export default function Quiz() {
         window.localStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", window.btoa(stageNumber));
         window.localStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(score));
         window.localStorage.setItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD", window.btoa(leftQuiz));
-    }, [stageNumber, score, leftQuiz]);
+        window.localStorage.setItem("JUVCJTg4JTg0JUVDJUEwJTgxJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(scoreData));
+        window.localStorage.setItem("JUVDJUIyJUI0JUVEJTgxJUFDJUVDJTk3JUFDJUVCJUI2JTgw", window.btoa(checked));
+    }, [stageNumber, score, leftQuiz, scoreData, checked]);
 
     return (
         <div className="wrap">

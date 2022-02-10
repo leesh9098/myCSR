@@ -15,7 +15,9 @@ export default class Prolog extends React.Component {
     start() {
         window.localStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", "MQ==");
         window.localStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", "MA==");
-        window.localStorage.setItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD", window.btoa(quiz.length - 1))
+        window.localStorage.setItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD", window.btoa(quiz.length - 1));
+        window.localStorage.setItem("JUVCJTg4JTg0JUVDJUEwJTgxJUVDJUEwJTkwJUVDJTg4JTk4", "MA==");
+        window.localStorage.setItem("JUVDJUIyJUI0JUVEJTgxJUFDJUVDJTk3JUFDJUVCJUI2JTgw", "ZmFsc2U=");
     }
     
     render() {
