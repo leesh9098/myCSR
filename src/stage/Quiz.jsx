@@ -74,8 +74,6 @@ export default function Quiz() {
                 </>
                 : 
                 <>
-                    {stageNumber}<br />
-                    {score}
                     <p className="museumBold quiztitletext">2022 대학생 능력고사</p>
                     <div className="namebox">
                         <div className="museumMedium nametext1">이름</div>
