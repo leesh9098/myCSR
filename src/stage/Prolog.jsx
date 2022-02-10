@@ -7,7 +7,7 @@ import "../App.css";
 export default class Prolog extends React.Component {
 
     componentDidMount() {
-        ReactGA.initialize('G-XSYRGNC2PX');
+        ReactGA.initialize(process.env.REACT_APP_GA_ID);
         ReactGA.send("pageview");
     }
 
