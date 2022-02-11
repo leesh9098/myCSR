@@ -4,7 +4,6 @@ import ReactGA from "react-ga4";
 import "../reset.css";
 import "../App.css";
 import { Helmet } from "react-helmet";
-import MainThumbnail from "../images/mainthumbnail.png";
 
 export default class Prolog extends React.Component {
 
