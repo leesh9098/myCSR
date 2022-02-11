@@ -1,7 +1,7 @@
 // import { useEffect } from "react";
 // import KakaoTalkIcon from "../../images/kakaotalkicon.png";
 // import { useScript } from "../../useScript";
-import { FacebookIcon, FacebookShareButton } from "react-share";
+// import { FacebookIcon, FacebookShareButton, TwitterShareButton, TwitterIcon } from "react-share";
 import CopyToClipboard from "react-copy-to-clipboard";
 
 export default function SocialShareButton() {
@@ -29,14 +29,10 @@ export default function SocialShareButton() {
     // }
 
     return (
-        <div style={{
-            display: 'flex',
-            width: '320px',
-            justifyContent: 'center'
-        }}>
-            <FacebookShareButton url={currentUrl} style={{ marginRight: '10px' }}>
+        <div>
+            {/* <FacebookShareButton url={currentUrl} style={{ marginRight: '10px' }}>
                 <FacebookIcon size={50} round={true} />
-            </FacebookShareButton>
+            </FacebookShareButton> */}
             {/* <TwitterShareButton url={currentUrl} style={{ marginRight: '10px' }}>
                 <TwitterIcon size={50} round={true} />
             </TwitterShareButton> */}
@@ -62,21 +58,7 @@ export default function SocialShareButton() {
                 </button>
             /> */}
             <CopyToClipboard text={currentUrl} onCopy={() => alert("복사되었습니다")}>
-                <button
-                    style={{
-                        fontSize: '20px',
-                        fontWeight: 'bold',
-                        color: 'rgb(255, 255, 255)',
-                        width: '50px',
-                        height: '50px',
-                        padding: '0',
-                        border: 'none',
-                        borderRadius: '50%',
-                        backgroundColor: 'rgb(150, 0, 255)'
-                    }}
-                >
-                    URL
-                </button>
+                <button className="urlcopybutton" />
             </CopyToClipboard>
         </div>
     )

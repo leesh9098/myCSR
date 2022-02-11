@@ -53,7 +53,6 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 320px;
     height: 100vh;
     padding: 30px 20px;
     margin: 0 auto;
@@ -238,6 +237,61 @@
     text-align: center;
 }
 
+.resultpage {
+    padding: 0;
+}
+
+.resultimage {
+    width: 100%;
+}
+
+.retrybutton {
+    position: fixed;
+    right: 20px;
+    bottom: 110px;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: url(./images/btn_retry.png);
+    background-size: cover;
+}
+
+.urlcopybutton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 70px;
+    height: 70px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: url(./images/btn_share.png);
+    background-size: cover;
+}
+
 @media screen and (min-width: 768px) {
-    
+    .wrap {
+        width: 768px;
+    }
+
+    .resultimage {
+        width: auto;
+        height: 100%;
+    }
+
+    .retrybutton {
+        right: 20px;
+        bottom: 140px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .urlcopybutton {
+        right: 20px;
+        bottom: 20px;
+        width: 100px;
+        height: 100px;
+    }
 }
