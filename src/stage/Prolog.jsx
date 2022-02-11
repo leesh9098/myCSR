@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ReactGA from "react-ga4";
 import "../reset.css";
 import "../App.css";
 import { Helmet } from "react-helmet";
 import MainThumbnail from "../images/mainthumbnail.png";
+import StartButton from "../components/button/StartButton";
 
 export default class Prolog extends React.Component {
 
@@ -36,9 +36,7 @@ export default class Prolog extends React.Component {
                     <div className="line"></div>
                     <div className="imagearea"></div>
                     <p className="suitRegular numberofuser">현재 10,402명이 참여</p>
-                    <Link to="/quiz">
-                        <button className="nextbutton">시작하기</button>
-                    </Link>
+                    <StartButton />
                     <div className="logoarea"></div>
                 </div>
             </>
