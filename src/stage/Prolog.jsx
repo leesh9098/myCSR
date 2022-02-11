@@ -21,11 +21,11 @@ export default class Prolog extends React.Component {
                     <meta property="og:title" content="2022 대학생 능력고사" />
                     <meta property="og:description" content="당신의 대학교 용어 점수는?" />
                     <meta property="og:image" content={MainThumbnail} />
-                    <meta name="twitter:card" content="summary" />
+                    {/* <meta name="twitter:card" content="summary" />
                     <meta name="twitter:site" content="@lesh7048" />
                     <meta name="twitter:title" content="2022 대학생 능력고사" />
                     <meta name="twitter:description" content="당신의 대학교 용어 점수는?" />
-                    <meta name="twitter:image" content={MainThumbnail} />
+                    <meta name="twitter:image" content={MainThumbnail} /> */}
                 </Helmet>
                 <div className="wrap">
                     <div className="titlebox">
