@@ -20,16 +20,12 @@ export default class Prolog extends React.Component {
                 </div>
                 <p className="museumMedium subtitletext">당신의 대학교 용어 점수는 과연?</p>
                 <div className="line"></div>
-                <div className="imagearea">
-
-                </div>
+                <div className="imagearea"></div>
                 <p className="suitRegular numberofuser">현재 10,402명이 참여</p>
                 <Link to="/quiz">
                     <button className="nextbutton">시작하기</button>
                 </Link>
-                <div className="logoarea">
-
-                </div>
+                <div className="logoarea"></div>
             </div>
         )
     }

@@ -43,7 +43,7 @@
 }
 
 #root {
-    background: url("./images/배경이미지.png") center center no-repeat;
+    background: url(./images/backgroundimage.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -148,7 +148,8 @@
 .imagearea {
     width: 260px;
     height: 160px;
-    background-color: rgb(0, 0, 0);
+    background: url(./images/mainimage.png) center center no-repeat;
+    background-size: cover;
     margin-bottom: 30px;
 }
 

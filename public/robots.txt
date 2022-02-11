@@ -1,7 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
 
 User-agent: *
-Disallow: /result/level1
-Disallow: /result/level2
-Disallow: /result/level3
-Disallow: /result/level4
+Disallow:
