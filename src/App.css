@@ -42,15 +42,22 @@
     font-family: 'SUIT-ExtraBold', serif;
 }
 
+#root {
+    background: url("./images/배경이미지.png") center center no-repeat;
+    background-size: cover;
+}
+
 .wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 280px;
+    width: 320px;
+    height: 100vh;
     padding: 30px 20px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .wrap > * {
@@ -160,6 +167,7 @@
 
 .answerbuttonbox {
     display: flex;
+    background-color: rgb(255, 255, 255);
 }
 
 .answerradiobox {

@@ -1,93 +1,107 @@
 export const quiz = [
     {
         id: 1,
-        question: "매 학기 초 개강을 기념하는 모임은? (3점)",
+        question: "학기의 시작을 기념하는 모임으로 가장 적절한 것은?",
         answers: [
-            { text: "예총", score: 0 },
-            { text: "개총", score: 10 },
-            { text: "신총", score: 0 },
-            { text: "총총", score: 0 }
+            { text: "학회", score: 0, quiznumber: "quiz1_1" },
+            { text: "학모", score: 0, quiznumber: "quiz1_2" },
+            { text: "개총", score: 10, quiznumber: "quiz1_3" },
+            { text: "정모", score: 0, quiznumber: "quiz1_4" }
         ]
     },
     {
         id: 2,
-        question: "'우공'은 우선공급의 줄임말이다. (10점)",
+        question: "강의 사이에 빈 시간이 길다는 뜻으로 가장 적절한 것은?",
         answers: [
-            { text: "O", score: 0 },
-            { text: "X", score: 10 }
+            { text: "우공", score: 10, quiznumber: "quiz2_1" },
+            { text: "휴장", score: 0, quiznumber: "quiz2_2" },
+            { text: "장시", score: 0, quiznumber: "quiz2_3" },
+            { text: "무강", score: 0, quiznumber: "quiz2_4" }
         ]
     },
     {
         id: 3,
-        question: '"아.. 중간고사 성적 망했다. 평점을 위해 어쩔 수 없이 ○○ 해야겠다ㅠㅠ"\n○○에 가장 어울리는 단어는 무엇일까요? (5점)',
+        question: "'수강신청을 망했다. 평점을 위해 ○○ 해야겠다.' 위 빈칸에 들어갈 말로 가장 적절하지 않은 것은?",
         answers: [
-            { text: "노쇼", score: 0 },
-            { text: "한잔", score: 0 },
-            { text: "드랍", score: 10 },
-            { text: "출튀", score: 0 }
+            { text: "정정", score: 0, quiznumber: "quiz3_1" },
+            { text: "한잔", score: 10, quiznumber: "quiz3_2" },
+            { text: "드랍", score: 0, quiznumber: "quiz3_3" },
+            { text: "출튀", score: 0, quiznumber: "quiz3_4" }
         ]
     },
     {
         id: 4,
-        question: "수강신청 전 수업을 미리 들어볼 때 사용하는 용어는? (5점)",
+        question: "신청을 하지 않고 듣는 강의로 가장 적절한 것은?",
         answers: [
-            { text: "수강", score: 0 },
-            { text: "독강", score: 0 },
-            { text: "선강", score: 0 },
-            { text: "청강", score: 10 }
+            { text: "연강", score: 0, quiznumber: "quiz4_1" },
+            { text: "독강", score: 0, quiznumber: "quiz4_2" },
+            { text: "선강", score: 0, quiznumber: "quiz4_3" },
+            { text: "청강", score: 10, quiznumber: "quiz4_4" }
         ]
     },
     {
         id: 5,
-        question: "대학교 내 식당을 '학식'이라고 부른다. 그렇다면 기숙사의 식당은 뭐라고 부를까요?(주관식) (5점)",
+        question: "시험에서 ‘족보'란 이전 기출문제를 의미한다.",
         answers: [
-            { text: "긱식", score: 10 }
+            { text: "O", score: 10, quiznumber: "quiz5_1" },
+            { text: "X", score: 0, quiznumber: "quiz5_2" }
         ]
     },
     {
         id: 6,
-        question: "학점이 점수가 아닌 영어로 결과가 나오는 과목의 용어는 무엇일까요? (10점)",
+        question: "‘P/F’에서 알파벳의 조합으로 가장 적절한 것은?",
         answers: [
-            { text: "패논패", score: 10 },
-            { text: "논패패", score: 0 },
-            { text: "패올패", score: 0 },
-            { text: "올패패", score: 0 }
+            { text: "Perfect/Friend", score: 0, quiznumber: "quiz6_1" },
+            { text: "Passion/Fashion", score: 0, quiznumber: "quiz6_2" },
+            { text: "Pass/Fail", score: 10, quiznumber: "quiz6_3" },
+            { text: "Party/Festival", score: 0, quiznumber: "quiz6_4" }
         ]
     },
     {
         id: 7,
-        question: "선배가 시험 치기 전날 '이것'을 주었고 난 A+이 나왔다.\n이것은 과연 무엇일까? (10점)",
+        question: "‘과사'의 의미로 가장 적절한 것은?",
         answers: [
-            { text: "초콜릿", score: 0 },
-            { text: "제본", score: 0 },
-            { text: "사탕", score: 0 },
-            { text: "족보", score: 10 }
+            { text: "과 사람", score: 0, quiznumber: "quiz7_1" },
+            { text: "학과 사무실", score: 10, quiznumber: "quiz7_2" },
+            { text: "과자 사라", score: 0, quiznumber: "quiz7_3" },
+            { text: "교과목 사전교육", score: 0, quiznumber: "quiz7_4" }
         ]
     },
     {
         id: 8,
-        question: '"아.. 뭐야 F가 3개나 떴어.. 이번에 ○○각인데..?"\n다음 ○○에 들어갈 말은 무엇일까요? (5점)',
+        question: '"아.. 뭐야 F가 3개나 떴어.. 이번에 ○○각인데..?" 위 빈칸에 들어갈 말로 가장 적절하지 않은 것은?',
         answers: [
-            { text: "학고", score: 10 },
-            { text: "낮술", score: 0 },
-            { text: "잔막", score: 0 },
-            { text: "학사", score: 0 },
+            { text: "학고", score: 0, quiznumber: "quiz8_1" },
+            { text: "계절", score: 0, quiznumber: "quiz8_2" },
+            { text: "휴학", score: 0, quiznumber: "quiz8_3" },
+            { text: "학사", score: 10, quiznumber: "quiz8_4" },
         ]
     },
     {
         id: 9,
-        question: "'대출'은 대학출석의 줄임말이다 (3점)",
+        question: '"대출좀 해줄래?"에 대한 답변으로 문맥상 가장 적절하지 않은 것은?',
         answers: [
-            { text: "O", score: 0 },
-            { text: "X", score: 10 }
+            { text: "나도 늦음ㅋㅋㅋ", score: 0, quiznumber: "quiz9_1" },
+            { text: "교수님이 내 얼굴 알껄?", score: 0, quiznumber: "quiz9_2" },
+            { text: "선배랑 밥약 있어서 안됨 ㅎ", score: 0, quiznumber: "quiz9_3" },
+            { text: "나도 그거 드랍각임 ㅠ", score: 10, quiznumber: "quiz9_4" }
         ]
     },
     {
         id: 10,
-        question: "Membership training은 MT의 줄임말이다. (10점)",
+        question: "MT는 Membership Tㅡ의 약자이다. T는 어떤 단어인가?",
         answers: [
-            { text: "O", score: 10 },
-            { text: "X", score: 0 }
+            { text: "Traveling", score: 0, quiznumber: "quiz10_1" },
+            { text: "Trip", score: 0, quiznumber: "quiz10_2" },
+            { text: "Training", score: 10, quiznumber: "quiz10_3" },
+            { text: "Tracking", score: 0, quiznumber: "quiz10_4" }
+        ]
+    },
+    {
+        id: 11,
+        question: "상상유니브 퀴즈",
+        answers: [
+            {text: "상상유니브 퀴즈", score: 0, quiznumber: "quiz11_1"}
         ]
     }
 ]

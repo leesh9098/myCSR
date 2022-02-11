@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function ResetButton({ to }) {
     const reset = () => {
-        window.localStorage.clear();
+        window.sessionStorage.clear();
     }
 
     return (
