@@ -36,7 +36,7 @@ export const quiz = [
             { text: "연강", score: 0, quiznumber: "quiz4_1" },
             { text: "독강", score: 0, quiznumber: "quiz4_2" },
             { text: "선강", score: 0, quiznumber: "quiz4_3" },
-            { text: "청강", score: 10, quiznumber: "quiz4_4" }
+            { text: "도강", score: 10, quiznumber: "quiz4_4" }
         ]
     },
     {

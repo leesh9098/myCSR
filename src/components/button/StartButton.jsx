@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router";
 
-const openTime = "2022-02-24 09:00:00";
+const openTime = "2022-02-01 09:00:00";
 const closeTime = "2022-02-24 21:00:00";
 
 export default function StartButton() {

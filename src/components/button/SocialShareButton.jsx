@@ -2,11 +2,26 @@
 // import KakaoTalkIcon from "../../images/kakaotalkicon.png";
 // import { useScript } from "../../useScript";
 // import { FacebookIcon, FacebookShareButton, TwitterShareButton, TwitterIcon } from "react-share";
-import CopyToClipboard from "react-copy-to-clipboard";
+// import CopyToClipboard from "react-copy-to-clipboard";
+
+import { useParams } from "react-router";
+import ResultData from "../../data/ResultData";
 
 export default function SocialShareButton() {
-
+    const { param } = useParams();
     const currentUrl = window.location.href;
+
+    const copyUrl = () => {
+        if (navigator.share) {
+            navigator.share({
+                title: ResultData[param]['ogTitle'],
+                text: ResultData[param]['ogDescription'],
+                url: currentUrl
+            })
+        } else {
+            alert("공유하기를 지원하지 않는 기기입니다.");
+        }
+    }
 
     // ****************kakao API*****************
     // const kakao = window.Kakao;
@@ -57,9 +72,9 @@ export default function SocialShareButton() {
                         }}
                 </button>
             /> */}
-            <CopyToClipboard text={currentUrl} onCopy={() => alert("복사되었습니다")}>
-                <button className="urlcopybutton" />
-            </CopyToClipboard>
+            {/* <CopyToClipboard text={currentUrl} onCopy={() => alert("복사되었습니다")}> */}
+                <button className="urlcopybutton" onClick={copyUrl} />
+            {/* </CopyToClipboard> */}
         </div>
     )
 }
