@@ -58,6 +58,7 @@ a {
     align-items: center;
     text-align: center;
     min-width: 320px;
+    max-width: 320px;
     height: 100vh;
     padding: 30px 20px;
     margin: 0 auto;
@@ -320,8 +321,8 @@ a {
     }
 
     .imagearea {
-        min-width: 768px;
-        min-height: 472px;
+        min-width: 100%;
+        min-height: 382px;
     }
 
     .questionbox {
