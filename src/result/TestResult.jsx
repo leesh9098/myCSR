@@ -23,10 +23,12 @@ export default function TestResult() {
                 <meta name="twitter:description" content={ResultData[param]["ogDescription"]} />
                 <meta name="twitter:image" content={ResultData[param]["ogImage"]} />
             </Helmet>
-            <div className="wrap resultpage">
-                <ResultSection param={param}></ResultSection>
-                <ResetButton to="/" />
-                <SocialShareButton />
+            <div className="wrap">
+                <div className="resultpage">
+                    <ResultSection param={param}></ResultSection>
+                    <ResetButton to="/" />
+                    <SocialShareButton />
+                </div>
             </div>
         </>
     )

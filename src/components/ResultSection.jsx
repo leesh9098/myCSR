@@ -7,7 +7,7 @@ const ResultSection = ({ param }) => {
             <img
                 src={ResultData[param].src}
                 alt="결과"
-                // onContextMenu={(e) => e.preventDefault()}
+                onContextMenu={(e) => e.preventDefault()}
                 className="resultimage" />
         </>
     )

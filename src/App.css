@@ -57,7 +57,7 @@ a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    max-width: 320px;
+    min-width: 320px;
     height: 100vh;
     padding: 30px 20px;
     margin: 0 auto;
@@ -254,6 +254,11 @@ a {
 }
 
 .resultpage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: normal;
     padding: 0;
 }
 
@@ -355,6 +360,11 @@ a {
     .logoarea {
         width: 480px;
         height: 52px;
+    }
+
+    .resultpage {
+        position: static;
+        height: 100%;
     }
 
     .resultimage {
