@@ -1,5 +1,5 @@
 import React from "react";
-import ReactGA from "react-ga4";
+// import ReactGA from "react-ga4";
 import "../reset.css";
 import "../App.css";
 import { Helmet } from "react-helmet";
@@ -19,8 +19,8 @@ export default class Prolog extends React.Component {
             .then(res => this.setState({ hitCount: res.value }))
         )
         window.localStorage.setItem("playLog", "y");
-        ReactGA.initialize(process.env.REACT_APP_GA_ID);
-        ReactGA.send("pageview");
+        // ReactGA.initialize(process.env.REACT_APP_GA_ID);
+        // ReactGA.send("pageview");
     }
 
     render() {
