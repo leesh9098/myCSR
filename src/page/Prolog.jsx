@@ -5,10 +5,20 @@ import "../App.css";
 import { Helmet } from "react-helmet";
 import MainThumbnail from "../images/mainthumbnail.png";
 import StartButton from "../components/button/StartButton";
+import countapi from "countapi-js";
+import Footer from "../components/Footer";
 
 export default class Prolog extends React.Component {
+    state = {
+        hitCount: this.props.hitCount
+    }
 
     componentDidMount() {
+        this.props.setHitCount(
+            countapi.get('numberofuser', 'users')
+            .then(res => this.setState({ hitCount: res.value }))
+        )
+        window.localStorage.setItem("playLog", "y");
         ReactGA.initialize(process.env.REACT_APP_GA_ID);
         ReactGA.send("pageview");
     }
@@ -35,9 +45,10 @@ export default class Prolog extends React.Component {
                     <p className="museumMedium subtitletext">당신의 대학교 용어 점수는 과연?</p>
                     <div className="line"></div>
                     <div className="imagearea"></div>
-                    <p className="suitRegular numberofuser">현재 10,402명이 참여</p>
+                    <p id="test" className="suitRegular numberofuser">{`현재 ${this.state.hitCount}명이 참여`}</p>
                     <StartButton />
                     <div className="logoarea"></div>
+                    <Footer />
                 </div>
             </>
         )

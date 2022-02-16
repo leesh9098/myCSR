@@ -99,9 +99,20 @@ export const quiz = [
     },
     {
         id: 11,
-        question: "상상유니브 퀴즈",
+        question: "2010년부터 KT&G에서 운영하는, 청년의 상상력으로 사회적가치를 만드는 대학생 커뮤니티는?",
         answers: [
-            {text: "상상유니브 퀴즈", score: 0, quiznumber: "quiz11_1"}
+            { text: "상샹유니브", answer: false, quiznumber: "quiz11_1" },
+            { text: "상상유니브", answer: true, quiznumber: "quiz11_2" }
+        ]
+    },
+    {
+        id: 12,
+        question: "상상유니브의 공식 홈페이지 주소는?",
+        answers: [
+            { text: "sangsanguniv.com", answer: true, quiznumber: "quiz12_1" },
+            { text: "ssuniv.com", answer: false, quiznumber: "quiz12_2" },
+            { text: "sangsang-univ.com", answer: false, quiznumber: "quiz12_3" },
+            { text: "ss-univ.com", answer: false, quiznumber: "quiz12_4" }
         ]
     }
 ]

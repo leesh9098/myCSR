@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function ResetButton({ to }) {
+export default function ResetButton({ to, setScore }) {
     const reset = () => {
         window.sessionStorage.clear();
+        setScore(0)
     }
 
     return (

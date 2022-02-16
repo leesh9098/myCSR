@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { quiz } from "../data/Quiz";
+import countapi from "countapi-js";
+import Footer from "../components/Footer";
 
-export default function Quiz() {
+export default function Quiz({ score, setScore, setHitCount }) {
     const [stageNumber, setStageNumber] = useState(parseInt(window.atob(window.sessionStorage.getItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE"))) || 1);
-    const [score, setScore] = useState(parseInt(window.atob(window.sessionStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))) || 0);
-    const [leftQuiz, setLeftQuiz] = useState(parseInt(window.atob(window.sessionStorage.getItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD"))) || quiz.length - 1);
+    // const [score, setScore] = useState(parseInt(window.atob(window.sessionStorage.getItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4"))) || 0);
+    const [leftQuiz, setLeftQuiz] = useState(parseInt(window.atob(window.sessionStorage.getItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD"))) || quiz.length - 3);
     const [answerList, setAnswerList] = useState("");
     const [scoreData, setScoreData] = useState(0);
     const [checked, setChecked] = useState(false);
     const [disable, setDisable] = useState(false);
+
+    let sc = score;
+
     let navigate = useNavigate();
 
     const handleAnswerList = (e) => {
@@ -34,33 +39,39 @@ export default function Quiz() {
         //         setStageNumber(stageNumber + 1);
         //     }
         // } else {
-        setChecked(false);
-        setScore(score + scoreData);
-        setLeftQuiz(leftQuiz - 1);
-        setStageNumber(stageNumber + 1);
+        if (stageNumber === 10) {
+            setChecked(false);
+            setScore(sc + scoreData);
+            setLeftQuiz(leftQuiz - 1);
+            setStageNumber(stageNumber + 1)
+            countapi.update('numberofuser', 'users', 1)
+                .then(res => setHitCount(res.value))
+            navigate('/loading');
+        } else {
+            setChecked(false);
+            setScore(sc + scoreData);
+            setLeftQuiz(leftQuiz - 1);
+            setStageNumber(stageNumber + 1)
+        };
         // }
     }
 
-    const showResult = () => {
-        let param;
-        if (score <= 40) {
-            param = "level1";
-        } else if (score <= 70) {
-            param = "level2";
-        } else if (score <= 90) {
-            param = "level3";
-        } else if (score === 100) {
-            param = "level4";
-        }
-        navigate(`/result/${param}`);
-    }
+    // const showResult = () => {
+    //     setChecked(false);
+    //     setScore(sc + scoreData);
+    //     setLeftQuiz(leftQuiz - 1);
+    //     setStageNumber(stageNumber + 1);
+    //     countapi.update('numberofuser', 'users', 1)
+    //     .then(res => setHitCount(res.value))
+    //     navigate('/loading');
+    // }
 
     // **************event감지**************
     useEffect(() => {
 
         // ************최근 퀴즈 저장*************
         window.sessionStorage.setItem("JUVEJTgwJUI0JUVDJUE2JTg4JUVBJUI4JUIwJUVCJUExJTlE", window.btoa(stageNumber));
-        window.sessionStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(score));
+        window.sessionStorage.setItem("JUVEJTk4JTg0JUVDJTlFJUFDJUVDJUEwJTkwJUVDJTg4JTk4", window.btoa(sc));
         window.sessionStorage.setItem("JUVCJTgyJUE4JUVDJTlEJTgwJUVCJUFDJUI4JUVDJUEwJTlD", window.btoa(leftQuiz));
 
         // ************다음 퀴즈로 넘어갈 때 checked의 state를 false로 초기화************
@@ -69,7 +80,7 @@ export default function Quiz() {
         } else {
             setDisable(true);
         }
-    }, [stageNumber, checked, leftQuiz, score]);
+    }, [stageNumber, checked, leftQuiz, sc]);
 
     return (
         <div className="wrap">
@@ -142,12 +153,13 @@ export default function Quiz() {
             {/* ***********진행 버튼*********** */}
             <button
                 className="suitExtraBold nextbutton"
-                onClick={stageNumber > 10 ? () => showResult() : () => handleAnswer()}
+                onClick={handleAnswer}
                 disabled={disable === false}
             >
                 다음
             </button>
             <p className="suitRegular leftquiz">{`${leftQuiz}개 문제 남음`}</p>
+            <Footer />
         </div>
     )
 }

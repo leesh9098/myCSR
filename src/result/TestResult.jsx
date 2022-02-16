@@ -6,7 +6,7 @@ import SocialShareButton from "../components/button/SocialShareButton";
 import ResultData from "../data/ResultData";
 import ResetButton from "../components/button/ResetButton";
 
-export default function TestResult() {
+export default function TestResult({ setScore }) {
     const { param } = useParams();
     const currentUrl = window.location.href;
 
@@ -25,8 +25,8 @@ export default function TestResult() {
             </Helmet>
             <div className="wrap">
                 <div className="resultpage">
-                    <ResultSection param={param}></ResultSection>
-                    <ResetButton to="/" />
+                    <ResultSection param={param} />
+                    <ResetButton to="/" setScore={setScore} />
                     <SocialShareButton />
                 </div>
             </div>
